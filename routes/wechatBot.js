@@ -2,14 +2,14 @@ var router = require('express').Router();
 // 引用 wechat 库，详细请查看 https://github.com/node-webot/wechat
 var wechat = require('wechat');
 var config = {
-  token: '请把微信后台要求输入的 token 填写在这里',
-  appid: '请把微信的 AppID 填写在这里',
-  encodingAESKey: '请把微信后台为您生成的 EncodingAESKey 填写在这里'
+  token: 'cloudwechat',
+  appid: 'wxed528b635567a89e',
+  encodingAESKey: 'HE7BrNPWVxu2CW4QITEokdlalFDEdQH421ctFMqBsbW'
 };
 
 var WechatAPI = require('wechat-api');
-var api = new WechatAPI('请把微信的 AppID 填写在这里',
-  '请把微信的 Secret Key 填写在这里');
+var api = new WechatAPI('wxed528b635567a89e',
+  'dc4b0a07680c2f96b77f3597ca54c979');
 
 router.use('/', wechat(config).text(function(message, req, res, next) {
   // message为文本内容
